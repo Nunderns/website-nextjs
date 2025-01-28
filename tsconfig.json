@@ -32,7 +32,7 @@
       ".next/types/**/*.ts",
       "**/*.ts",
       "**/*.tsx"
-, "src/components/ModeToggle.jsx", "src/app/page.jsx", "src/components/DesktopNavbar.tsx"    ],
+, "src/components/ModeToggle.jsx", "src/app/page.jsx", "src/components/DesktopNavbar.jsx", "src/components/MobileNavbar.jsx"    ],
     "exclude": [
       "node_modules"
     ]
