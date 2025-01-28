@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DesktopNavbar from "./DesktopNavbar";
+import MobileNavbar from "./MobileNavbar";
 import { currentUser } from "@clerk/nextjs/server";
 
 async function Navbar() {
@@ -16,6 +17,7 @@ async function Navbar() {
           </div>
 
           <DesktopNavbar />
+          <MobileNavbar/>
         </div>
       </div>
     </nav>
