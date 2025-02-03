@@ -1,8 +1,8 @@
 import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/user.action";
 import CreatePost from "@/components/CreatePost";
+import PostCard from "@/components/PostCard";
 import { currentUser } from "@clerk/nextjs/server";
-import {PostCard} from "@/components/PostCard"
 
 export default async function Home() {
   const user = await currentUser();
@@ -16,9 +16,12 @@ export default async function Home() {
 
         <div className="space-y-6">
           {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <PostCard key={post.id} post={post} dbUserId={dbUserId} />
           ))}
         </div>
+      </div>
+
+      <div className="hidden lg:block lg:col-span-4 sticky top-20">
       </div>
     </div>
   );
