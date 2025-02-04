@@ -25,7 +25,7 @@ function CreatePost() {
     try {
       const result = await createPost(content, imageUrl);
       if (result?.success) {
-        // reset the form
+        // resetar o form
         setContent("");
         setImageUrl("");
         setShowImageUpload(false);
@@ -49,7 +49,7 @@ function CreatePost() {
               <AvatarImage src={user?.imageUrl || "/avatar.png"} />
             </Avatar>
             <Textarea
-              placeholder="What's on your mind?"
+              placeholder="O que está pensando?"
               className="min-h-[100px] resize-none border-none focus-visible:ring-0 p-0 text-base"
               value={content}
               onChange={(e) => setContent(e.target.value)}
