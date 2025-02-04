@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Social Media Website (Twitter Clone)
 
-## Getting Started
+Este é um projeto de uma rede social similar ao Twitter, desenvolvido utilizando **React** e **Next.js**. O projeto também integra diversas tecnologias modernas para estilização, autenticação e gerenciamento de banco de dados.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **[React](https://reactjs.org/)** - Biblioteca para construção da interface de usuário.
+- **[Next.js](https://nextjs.org/)** - Framework para React com renderização do lado do servidor.
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utilizado para estilização responsiva e moderna.
+- **[Neon Tech](https://neon.tech/)** - Plataforma para gerenciamento do banco de dados PostgreSQL.
+- **[Prisma](https://www.prisma.io/)** - ORM para manipulação do banco de dados PostgreSQL.
+- **[Clerk](https://clerk.dev/)** - Serviço para autenticação de usuários.
+- **[shadcn/ui](https://ui.shadcn.com/)** - Biblioteca de componentes UI.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalação
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/Nunderns/website-nextjs.git
+   cd website-nextjs
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-## Learn More
+3. **Configure as variáveis de ambiente (.env):**
+   Crie um arquivo `.env.local` na raiz do projeto com o seguinte conteúdo:
+   ```env
+    PRISMA_CLIENT_ENGINE_TYPE=binary
+    PRISMA_CLI_QUERY_ENGINE_TYPE=binary
 
-To learn more about Next.js, take a look at the following resources:
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_cHJvbW90ZWQtc2hlZXBkb2ctMTAuY2xlcmsuYWNjb3VudHMuZGV2JA
+    CLERK_SECRET_KEY=sk_test_VKobRfUvxfYxqhVgjwUVQTA7vKqGiX9OB26m1IZxpA
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    DATABASE_URL=postgresql://neondb_owner:npg_PR5xwrCtZ4km@ep-super-bird-a8nu380j-pooler.eastus2.azure.neon.tech/neondb?sslmode=require
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Execute as migrações do Prisma:**
+   ```bash
+   npx prisma migrate dev --name init
+   ```
 
-## Deploy on Vercel
+5. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Como Funciona
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Autenticação:** Gerenciada pelo **Clerk**, permitindo registro e login de usuários.
+- **Banco de Dados:** Utiliza **PostgreSQL** hospedado no **Neon Tech**, com gerenciamento feito pelo **Prisma**.
+- **Interface:** Estilização responsiva e moderna utilizando **Tailwind CSS** e componentes prontos do **shadcn/ui**.
+
+## Scripts Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento.
+- `npm run build` - Cria uma versão de produção do app.
+- `npm start` - Inicia a aplicação em modo de produção.
+- `npx prisma studio` - Abre o Prisma Studio para gerenciar o banco de dados.
+
+
+
